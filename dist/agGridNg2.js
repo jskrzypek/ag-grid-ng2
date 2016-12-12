@@ -1,6 +1,6 @@
 "use strict";
-var core_1 = require('@angular/core');
-var main_1 = require('ag-grid/main');
+var core_1 = require("@angular/core");
+var main_1 = require("ag-grid/main");
 var ng2FrameworkFactory_1 = require("./ng2FrameworkFactory");
 var agGridColumn_1 = require("./agGridColumn");
 var AgGridNg2 = (function () {
@@ -144,6 +144,8 @@ var AgGridNg2 = (function () {
         this.animateRows = undefined;
         this.groupSelectsFiltered = undefined;
         this.groupRemoveSingleChildren = undefined;
+        this.getBusinessKeyForNode = undefined;
+        this.checkboxSelection = undefined;
         this._nativeElement = elementDef.nativeElement;
         // create all the events generically. this is done generically so that
         // if the list of grid events change, we don't need to change this code.
@@ -165,9 +167,6 @@ var AgGridNg2 = (function () {
                 }
             });
         }
-    };
-    // this gets called after the directive is initialised
-    AgGridNg2.prototype.ngOnInit = function () {
     };
     AgGridNg2.prototype.ngAfterViewInit = function () {
         this.gridOptions = main_1.ComponentUtil.copyAttributesToGridOptions(this.gridOptions, this);
@@ -224,11 +223,11 @@ var AgGridNg2 = (function () {
                 },] },
     ];
     /** @nocollapse */
-    AgGridNg2.ctorParameters = [
+    AgGridNg2.ctorParameters = function () { return [
         { type: core_1.ElementRef, },
         { type: core_1.ViewContainerRef, },
         { type: ng2FrameworkFactory_1.Ng2FrameworkFactory, },
-    ];
+    ]; };
     AgGridNg2.propDecorators = {
         'columns': [{ type: core_1.ContentChildren, args: [agGridColumn_1.AgGridColumn,] },],
         'gridOptions': [{ type: core_1.Input },],
@@ -367,6 +366,8 @@ var AgGridNg2 = (function () {
         'animateRows': [{ type: core_1.Input },],
         'groupSelectsFiltered': [{ type: core_1.Input },],
         'groupRemoveSingleChildren': [{ type: core_1.Input },],
+        'getBusinessKeyForNode': [{ type: core_1.Input },],
+        'checkboxSelection': [{ type: core_1.Input },],
         'gridReady': [{ type: core_1.Output },],
         'columnEverythingChanged': [{ type: core_1.Output },],
         'newColumnsLoaded': [{ type: core_1.Output },],

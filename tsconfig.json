@@ -19,6 +19,7 @@
     "main.d.ts"
   ],
   "angularCompilerOptions": {
-    "genDir": "aot"
+    "genDir": "aot",
+    "strictMetadataEmit": true
   }
 }
